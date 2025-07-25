@@ -1,0 +1,30 @@
+import { Destroyable } from '../types';
+import { Timeline } from './timeline';
+import { VideoControllerApi } from '../video';
+export declare class TimelineDomController implements Destroyable {
+    private _timeline;
+    private _videoController;
+    private _divTimeline;
+    private _divTimelineOverlay;
+    private _divTimelineCanvas;
+    private _divTimelineTimecode;
+    private _timecodeEdit?;
+    private readonly _destroyed$;
+    constructor(timeline: Timeline, videoController: VideoControllerApi);
+    private createDom;
+    private cleanDom;
+    settleDom(): void;
+    set videoController(videoController: VideoControllerApi);
+    toggleTimecodeEdit(): void;
+    private openTimecodeEdit;
+    private refreshTimecode;
+    private setDivTimelineTimecode;
+    private getTimelineElement;
+    private getTimelineElements;
+    private timecodeDblClickHandler;
+    private timecodeBlurHandler;
+    private timecodeSubmitHandler;
+    destroy(): void;
+    get divTimeline(): HTMLElement;
+    get divTimelineCanvas(): HTMLDivElement;
+}

@@ -32,7 +32,7 @@ node_modules
 Thumbs.db
 
 # Ignore built ts files
-dist/**/*
+# dist/**/*
 dist-prod/**/*
 
 # ignore .lock
@@ -58,7 +58,7 @@ Thumbs.db
 *.mov
 *.wmv
 
-/dist/
+# /dist/
 /.parcel-cache/
 /package/
 /infrastructure/templates/packaged.*

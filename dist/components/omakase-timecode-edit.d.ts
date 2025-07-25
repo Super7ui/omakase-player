@@ -1,0 +1,37 @@
+import { TimecodeObject, Video } from '../video/model';
+export declare class OmakaseTimecodeEdit extends HTMLElement {
+    private _timecode;
+    private _container;
+    private _input;
+    private _video?;
+    private _ffom?;
+    private _maxTime?;
+    private _minTime?;
+    private _isValidTimecode;
+    constructor();
+    connectedCallback(): void;
+    private appendStyle;
+    set minTime(time: number | undefined);
+    set maxTime(time: number | undefined);
+    set ffom(ffom: TimecodeObject | undefined);
+    get video(): Video | undefined;
+    set video(video: Video | undefined);
+    get frameRate(): number;
+    get duration(): number;
+    get isDropFrameRate(): boolean;
+    get currentFrame(): number | undefined;
+    get durationInFrames(): number;
+    set disabled(disabled: boolean);
+    focus(options?: FocusOptions): void;
+    isTimecodeValid(): boolean;
+    private handleKeyUp;
+    private handleKeyDown;
+    private handleBlur;
+    private validate;
+    nextTimecode(): void;
+    previousTimecode(): void;
+    set timecode(timecode: string);
+    get timecode(): string;
+    get value(): string;
+    set value(timecode: string);
+}

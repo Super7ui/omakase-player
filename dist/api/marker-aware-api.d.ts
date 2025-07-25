@@ -1,0 +1,63 @@
+import { Observable } from 'rxjs';
+import { Api } from './api';
+import { MarkerCreateEvent, MarkerDeleteEvent, MarkerInitEvent, MarkerSelectedEvent, MarkerUpdateEvent } from '../types';
+import { MarkerApi } from './marker-api';
+export interface MarkerAwareApi extends Api {
+    /**
+     *  Fires on loading the initial list of markers
+     *  @readonly
+     */
+    onMarkerInit$: Observable<MarkerInitEvent>;
+    /**
+     *  Fires on marker create
+     *  @readonly
+     */
+    onMarkerCreate$: Observable<MarkerCreateEvent>;
+    /**
+     *  Fires on marker delete
+     *  @readonly
+     */
+    onMarkerDelete$: Observable<MarkerDeleteEvent>;
+    /**
+     *  Fires on marker update
+     *  @readonly
+     */
+    onMarkerUpdate$: Observable<MarkerUpdateEvent>;
+    /**
+     *  Fires on marker selected
+     *  @readonly
+     */
+    onMarkerSelected$: Observable<MarkerSelectedEvent>;
+    /**
+     * Track name
+     */
+    get name(): string;
+    /**
+     * @returns all Markers
+     */
+    getMarkers(): MarkerApi[];
+    /**
+     * Adds a new marker
+     * @param marker Marker Data
+     */
+    addMarker(marker: Partial<MarkerApi>): MarkerApi;
+    /**
+     * Removes Marker by ID
+     * @param id Marker ID
+     */
+    removeMarker(id: string): void;
+    /**
+     * Updates Marker by ID
+     * @param id Marker ID
+     */
+    updateMarker(id: string, data: Partial<MarkerApi>): void;
+    /**
+     * Set selected Marker as active
+     * @param id Marker ID
+     */
+    toggleMarker(id: string): void;
+    /**
+     * Get currently active marker
+     */
+    getSelectedMarker(): MarkerApi | undefined;
+}

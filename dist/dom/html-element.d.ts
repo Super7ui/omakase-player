@@ -1,0 +1,40 @@
+export declare const HTMLElementEvents: {
+    ERROR: string;
+    LOAD: string;
+};
+export declare const HTMLMediaElementEvents: {
+    DURATIONCHANGE: string;
+    ENDED: string;
+    LOADEDDATA: string;
+    LOADEDMETEDATA: string;
+    PAUSE: string;
+    PLAYING: string;
+    PROGRESS: string;
+    RATECHANGE: string;
+    SEEKED: string;
+    SEEKING: string;
+    TIMEUPDATE: string;
+    VOLUMECHANGE: string;
+    WAITING: string;
+    ERROR: string;
+    LOAD: string;
+};
+export declare const HTMLVideoElementEvents: {
+    ENTERPIP: string;
+    LEAVEPIP: string;
+    DURATIONCHANGE: string;
+    ENDED: string;
+    LOADEDDATA: string;
+    LOADEDMETEDATA: string;
+    PAUSE: string;
+    PLAYING: string;
+    PROGRESS: string;
+    RATECHANGE: string;
+    SEEKED: string;
+    SEEKING: string;
+    TIMEUPDATE: string;
+    VOLUMECHANGE: string;
+    WAITING: string;
+    ERROR: string;
+    LOAD: string;
+};

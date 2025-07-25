@@ -1,0 +1,47 @@
+import { Subject } from 'rxjs';
+import { VideoControllerApi } from '../video/video-controller-api';
+import { MarkerListItem } from './marker-list-item';
+export declare class MarkerListComponent extends HTMLElement {
+    onAction$: Subject<{
+        marker: MarkerListItem;
+        action: string;
+    }>;
+    onRemove$: Subject<MarkerListItem>;
+    onClick$: Subject<MarkerListItem>;
+    private _markers;
+    private _defaultTemplate;
+    private _headerElement;
+    private _emptyElement;
+    private _loadingElement;
+    private _listElement;
+    private _videoController;
+    private _isLoading;
+    private _nameEditable;
+    private _timeEditable;
+    private _nameOptions?;
+    private _nameValidationFn?;
+    constructor();
+    set videoController(videoController: VideoControllerApi);
+    set headerElement(headerElement: HTMLElement);
+    set emptyElement(emptyElement: HTMLElement);
+    set loadingElement(loadingElement: HTMLElement);
+    get markers(): MarkerListItem[];
+    set markers(markers: MarkerListItem[]);
+    set isLoading(isLoading: boolean);
+    set nameEditable(isEditable: boolean);
+    set timeEditable(isEditable: boolean);
+    set nameOptions(options: string[]);
+    set nameValidationFn(validationFn: (text: string) => boolean);
+    updateMarker(id: string, updateValue: Partial<MarkerListItem>): void;
+    toggleActiveClass(id: string): void;
+    addMarker(markerItem: MarkerListItem): void;
+    removeMarker(id: string): void;
+    private reorderMarker;
+    private getNextMarker;
+    private renderList;
+    private getTemplate;
+    private addMarkerToDom;
+    private setMarkerSlotValues;
+    private removeMarkerFromDom;
+    private getDefaultHtmlElement;
+}

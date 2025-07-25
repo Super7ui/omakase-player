@@ -1,0 +1,11 @@
+import { Observable, Observer, Subject, Subscriber, TeardownLogic } from 'rxjs';
+export declare function passiveObservable<T = void>(subscribe: (this: Observable<T>, subscriber: Subscriber<T>) => TeardownLogic): Observable<T>;
+export declare function simplePassiveObservable<T = void>(value?: T): Observable<T>;
+export declare function nextCompleteObserver<T>(observer: Observer<T>, value?: T): void;
+export declare function errorCompleteObserver(observer: Observer<any>, error: any): void;
+export declare function nextCompleteSubject(subject: Subject<any>, value?: any): void;
+export declare function completeSubject(subject: Subject<any>): void;
+export declare function completeSubjects(...subjects: Subject<any>[]): void;
+export declare function unsubscribeSubjects(...subjects: Subject<any>[]): void;
+export declare function completeUnsubscribeSubjects(...subjects: Subject<any>[]): void;
+export declare function unsubscribeSubject(subject: Subject<any>): void;

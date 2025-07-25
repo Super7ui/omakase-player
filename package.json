@@ -28,8 +28,7 @@
     "format": "prettier . --write",
     "dev:tsc": "rm -rf dist/lib && tsc --watch",
     "build:workers": "vite build --config vite.workers.config.mjs",
-    "build:prod": "rm -rf dist && npm run build:workers && tsc --noEmit && vite build --debug",
-    "prepare": "npm run build:workers && tsc --noEmit && vite build --debug"
+    "build:prod": "npm run build:workers && tsc --noEmit && vite build --debug"
   },
   "dependencies": {
     "axios": "1.8.3",
